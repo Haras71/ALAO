@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olas - Belmonte</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/eventos.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo às Olas - Belmonte</h1>
+    </header>
+    <nav>
+        <a href="index.html">História</a>
+        <a href="events.html">Eventos</a>
+        <a href="contacts.html">Onde estamos</a>
+    </nav>
+   
+    <section id="events">
+        <div class="container">
+            <div class="card calendar-controls">
+                <button onclick="changeMonth(-1)">&#10094; Mês Anterior</button>
+                <span id="calendar-month-year"></span>
+                <button onclick="changeMonth(1)">Próximo Mês &#10095;</button>
+            </div>
+            <div id="calendar" class="card">
+                <!-- O calendário será renderizado aqui -->
+            </div>
+            
+            <h2>Eventos</h2>
+            <div id="event-list"></div>
+            <form id="event-form">
+                <input type="hidden" id="event-id">
+                <label for="event-date">Data do Evento:</label>
+                <input type="date" id="event-date" required>
+                <label for="event-name">Nome do Evento:</label>
+                <input type="text" id="event-name" required>
+                <label for="event-description">Descrição do Evento:</label>
+                <textarea id="event-description" required></textarea>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </section>
+    
+    
+    <footer>
+        <p>&copy; 2025 ALOS - Olas - Belmonte. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/admin.js"></script>
+    
+</body>
+</html>

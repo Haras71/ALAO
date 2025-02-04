@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "06 Maio - Festival do pão",
+    "description": "Maio é o mês normalmente reservado para a organização do evento. Os locais são convidados a cozer o pão num forno 'comunitário' .",
+    "date": "2025-05-06"
+  },
+  {
+    "id": "2",
+    "title": "15 Agosto - Festa do Emigrante",
+    "description": "Termina julho, entra agosto! Com a visita dos nosso compatriotas além fronteiras é tempo de organizar o arraial popular.",
+    "date": "2025-08-15"
+  },
+  {
+    "id": "3",
+    "title": "18 Outubro - Festival do arroz doce",
+    "description": "A realização deste evento ocorre normalmente no mês de outubro. O festival conta com uma zona de expositores locais, atuações musicais, jogos tradicionais.",
+    "date": "2025-10-18"
+  },
+  {
+    "id": "4",
+    "title": "24 Dezembro - Madeiro",
+    "description": "As gentes Olanas, após consoarem, reunem-se em sã confraternização à volta da calor emanado pelo 'madeiro' ",
+    "date": "2025-12-24"
+  },
+  {
+    "id": "5",
+    "title": "31 Dezembro -  Cantar as Janeiras",
+    "description": "O ano termina, e os Olanos brindam as suas gentes com cantares seculares a compasso das concertinas.",
+    "date": "2025-02-11"
+  }
+]
