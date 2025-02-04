@@ -167,7 +167,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            fetch('conteudos/event.json')
+            fetch('https://alao-olas.onrender.com/conteudos/event.json')
                 .then(response => response.json())
                 .then(events => {
                     const eventCards = document.getElementById('event-cards');
