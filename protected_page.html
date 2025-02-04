@@ -329,7 +329,7 @@
     
         // Function to load events from JSON file
         function loadEvents() {
-            fetch('http://localhost:3000/events')
+            fetch('https://alao.onrender.com:3000/events')
                 .then(response => response.json())
                 .then(events => {
                     const eventList = document.getElementById('event-list');
@@ -374,7 +374,7 @@
             };
     
             const method = eventId ? 'PUT' : 'POST';
-            const url = eventId ? `http://localhost:3000/events/${eventId}` : 'http://localhost:3000/events';
+            const url = eventId ? `https://alao.onrender.com:3000/events/${eventId}` : 'https://alao.onrender.com:3000/events';
     
             fetch(url, {
                 method: method,
@@ -400,7 +400,7 @@
     
         // Function to delete an event
         function deleteEvent(eventId) {
-            fetch(`http://localhost:3000/events/${eventId}`, {
+            fetch(`https://alao.onrender.com:3000/events/${eventId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -422,7 +422,7 @@
         // Function to load event data into the form for editing
         // Function to load event data into the form for editing
         function editEventForm(eventId) {
-            fetch(`http://localhost:3000/events/${eventId}`)
+            fetch(`https://alao.onrender.com:3000/events/${eventId}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
