@@ -175,6 +175,43 @@
     <script src="assets/dropdown/js/navbar-dropdown.js"></script>
     <script src="assets/theme/js/script.js"></script>
     <script src="assets/formoid/formoid.min.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('https://alao-olas.onrender.com/events')
+            .then(response => response.json())
+            .then(events => {
+                const eventCards = document.getElementById('event-cards');
+                events.forEach(event => {
+                    const card = document.createElement('div');
+                    card.className = 'col-md-4 mb-3';
+
+                    const cardContainer = document.createElement('div');
+                    cardContainer.className = 'event-card';
+
+                    const cardBody = document.createElement('div');
+                    cardBody.className = 'card-body';
+
+                    const cardTitle = document.createElement('h5');
+                    cardTitle.className = 'card-title';
+                    cardTitle.textContent = event.title;
+
+                    const cardDescription = document.createElement('p');
+                    cardDescription.className = 'card-text';
+                    cardDescription.innerHTML = event.description; // Processa elementos HTML
+
+                    cardBody.appendChild(cardTitle);
+                    cardBody.appendChild(cardDescription);
+                    cardContainer.appendChild(cardBody);
+                    card.appendChild(cardContainer);
+                    eventCards.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error fetching events:', error));
+    });
+</script>
+<!--
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             fetch('https://alao-olas.onrender.com/events')
@@ -208,6 +245,6 @@
                 })
                 .catch(error => console.error('Error fetching events:', error));
         });
-    </script>
+    </script> -->
 </body>
 </html>
