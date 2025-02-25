@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/events', (req, res) => {
-    fs.readFile('https://alao-olas.onrender.com/conteudos/event.json', (err, data) => {
+    fs.readFile('/conteudos/event.json', (err, data) => {
         if (err) throw err;
         const events = JSON.parse(data).map(event => ({ ...event, id: event.id.toString() }));
         res.json(events);
@@ -24,7 +24,7 @@ app.get('/events', (req, res) => {
 });
 
 app.get('/events/:id', (req, res) => {
-    fs.readFile('https://alao-olas.onrender.com/conteudos/event.json', (err, data) => {
+    fs.readFile('/conteudos/event.json', (err, data) => {
         if (err) throw err;
         const events = JSON.parse(data);
         const event = events.find(event => event.id.toString() === req.params.id);
@@ -38,12 +38,12 @@ app.get('/events/:id', (req, res) => {
 });
 
 app.post('/events', (req, res) => {
-    fs.readFile('https://alao-olas.onrender.com/conteudos/event.json', (err, data) => {
+    fs.readFile('/conteudos/event.json', (err, data) => {
         if (err) throw err;
         let events = JSON.parse(data);
         req.body.id = req.body.id.toString();
         events.push(req.body);
-        fs.writeFile('https://alao-olas.onrender.com/conteudos/event.json', JSON.stringify(events, null, 2), (err) => {
+        fs.writeFile('/conteudos/event.json', JSON.stringify(events, null, 2), (err) => {
             if (err) throw err;
             res.status(200).send('Event added');
         });
@@ -52,7 +52,7 @@ app.post('/events', (req, res) => {
 
 // DELETE route to delete an event by ID
 app.delete('/events/:id', (req, res) => {
-    fs.readFile('https://alao-olas.onrender.com/conteudos/event.json', (err, data) => {
+    fs.readFile('/conteudos/event.json', (err, data) => {
         if (err) throw err;
         let events = JSON.parse(data);
         const eventId = req.params.id;
@@ -60,7 +60,7 @@ app.delete('/events/:id', (req, res) => {
 
         if (eventIndex !== -1) {
             events.splice(eventIndex, 1);
-            fs.writeFile('https://alao-olas.onrender.com/conteudos/event.json', JSON.stringify(events, null, 2), (err) => {
+            fs.writeFile('/conteudos/event.json', JSON.stringify(events, null, 2), (err) => {
                 if (err) throw err;
                 res.status(200).send(`Event with ID ${eventId} deleted successfully.`);
             });
@@ -72,7 +72,7 @@ app.delete('/events/:id', (req, res) => {
 
 // PUT route to edit an event by ID
 app.put('/events/:id', (req, res) => {
-    fs.readFile('https://alao-olas.onrender.com/conteudos/event.json', (err, data) => {
+    fs.readFile('conteudos/event.json', (err, data) => {
         if (err) throw err;
         let events = JSON.parse(data);
         const eventId = req.params.id;
@@ -80,7 +80,7 @@ app.put('/events/:id', (req, res) => {
 
         if (eventIndex !== -1) {
             events[eventIndex] = { ...events[eventIndex], ...req.body, id: events[eventIndex].id.toString() };
-            fs.writeFile('https://alao-olas.onrender.com/conteudos/event.json', JSON.stringify(events, null, 2), (err) => {
+            fs.writeFile('/conteudos/event.json', JSON.stringify(events, null, 2), (err) => {
                 if (err) throw err;
                 res.status(200).send(`Event with ID ${eventId} updated successfully.`);
             });
@@ -91,5 +91,5 @@ app.put('/events/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running at https://alao-olas.onrender.com:${port}`);
+    console.log(`Server running at https://localhost:${port}`);
 });
